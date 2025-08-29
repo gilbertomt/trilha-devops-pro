@@ -1,0 +1,42 @@
+services:
+  mysql_db:
+    image: mysql:9.4.0
+    container_name: rota42_blog_mysql_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: r0T4!42@37#19%82
+      MYSQL_DATABASE: blog
+      MYSQL_USER: rota42-blog
+      MYSQL_PASSWORD: Bl0g@R0t4!42
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - rota42-blog
+
+  wordpress:
+    image: wordpress:6.8.2-php8.3-apache
+    container_name: rota42_blog_wordpress
+    restart: unless-stopped
+    environment:
+      WORDPRESS_DB_HOST: mysql_db
+      WORDPRESS_DB_USER: rota42-blog
+      WORDPRESS_DB_PASSWORD: Bl0g@R0t4!42
+      WORDPRESS_DB_NAME: blog
+    depends_on:
+      - mysql_db
+    ports:
+      - "8000:80"
+    volumes:
+      - wordpress_data:/var/www/html
+    networks:
+      - rota42-blog
+
+volumes:
+  mysql_data:
+  wordpress_data:
+
+networks:
+  rota42-blog:
+    driver: bridge
