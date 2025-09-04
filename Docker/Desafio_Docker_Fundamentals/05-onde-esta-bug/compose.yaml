@@ -1,0 +1,49 @@
+services:
+    postgre:
+        image: postgres:13.16
+        container_name: fake_shop_db
+        restart: always
+        environment:
+            POSTGRES_USER: ecommerce
+            POSTGRES_DB: ecommerce
+            POSTGRES_PASSWORD: Pg1234
+        ports:
+            - "5432:5432"
+        volumes:
+            - postgre_data:/var/lib/postgresql/data
+        networks:
+            - fake_shop_network
+        healthcheck:
+            test: ["CMD-SHELL", "pg_isready -U ecommerce -d ecommerce || exit 1"]
+            interval: 1m30s
+            timeout: 30s
+            retries: 5
+            start_period: 30s
+
+    ecommerce:
+        image: fabricioveronez/fake-shop
+        container_name: fake_shop_app
+        restart: always
+        environment:
+            DB_HOST: postgre
+            DB_USER: ecommerce
+            DB_PASSWORD: Pg1234
+            DB_NAME: ecommerce
+            DB_PORT: "5432"
+            FLASK_APP: index.py
+        ports:
+            - "5000:5000"
+        depends_on:
+            postgre:
+                condition: service_healthy
+        networks:
+            - fake_shop_network
+
+networks:
+    fake_shop_network:
+        name: fake_shop_network
+        driver: bridge
+
+volumes:
+   postgre_data:
+       name: fake_shop_db
