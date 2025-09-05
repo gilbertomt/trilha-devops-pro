@@ -1,4 +1,4 @@
-Introdução
+# Introdução
 
 A Rota42 é uma startup inovadora que está crescendo rápido, mas enfrenta um grande problema: sua aplicação está cheia de configurações manuais, cada desenvolvedor configura o ambiente de um jeito diferente e os erros em produção são frequentes.
 

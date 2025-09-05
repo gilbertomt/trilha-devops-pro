@@ -1,0 +1,17 @@
+services:
+  web:
+    image: rota42/web:v1
+    container_name: rota42_web
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    networks:
+      - rota42_web_network
+
+networks:
+  rota42_web_network:
+    name: rota42_web_network
+    driver: bridge
+

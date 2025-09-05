@@ -1,0 +1,11 @@
+services:
+  converter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: rota42/ffmpeg-converter:v1
+    container_name: rota42_converter
+    working_dir: /data
+    volumes:
+      - ./videos:/data
+    restart: "no"

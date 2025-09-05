@@ -1,11 +1,14 @@
+# Desafio 5 - Onde Está o Bug?
+
 Depois que os microsserviços começaram a rodar em containers, os desenvolvedores começaram a relatar problemas: "A aplicação está com erro, mas não sabemos por quê!". Sem logs estruturados e sem acesso fácil ao container, o time de suporte está perdido.
 
-Missão:
+## Missão:
 
 Analisar o Docker Compose da aplicação e resolver o problema.
 
-1 - Rodar os serviços do docker-compose.yml.
+1. Rodar os serviços do docker-compose.yml.
 
+```yaml
 services:
     postgre:
         image: postgres:13.16
@@ -36,12 +39,14 @@ services:
 
     volumes:
         postgre_data:
+```
 
-2 - Listar os logs.
+2. Listar os logs.
 
-Entrega:
+## Entrega:
 
 Entregar ocompose.yml corrigido no diretório 05-onde-esta-bug:
+```text
 .
 ├── 01-primeiro-container
 │   └── run_containers.sh
@@ -57,3 +62,4 @@ Entregar ocompose.yml corrigido no diretório 05-onde-esta-bug:
 │
 └── 05-onde-esta-bug
     └── compose.yaml
+```
