@@ -35,7 +35,7 @@ O SBOM será gerado utilizando o Trivy, que permite a análise detalhada da imag
 ├── 06-imagem-docker-segura-fake-shop
 │   ├── Dockerfile
 │   ├── after-fix-report.sarif
-│   ├── before-fix-report.txt
+│   ├── before-fix-report.sarif
 │   ├── hadolint-report.txt
 │   └── requirements.txt
 ├── 07-sbom-trivy-fake-shop

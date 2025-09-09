@@ -1,6 +1,6 @@
 # Desafio 6: Práticas para Imagem Docker Segura no Fake Shop
 
-Após a análise de vulnerabilidades no projeto Fake Shop, a equipe de desenvolvimento corrigiu problemas nas dependências da aplicação. Agora, o foco está na imagem Docker utilizada para rodar o serviço.
+Após a análise de vulnerabilidades no projeto [Fake Shop](https://github.com/KubeDev/fake-shop), a equipe de desenvolvimento corrigiu problemas nas dependências da aplicação. Agora, o foco está na imagem Docker utilizada para rodar o serviço.
 
 Para garantir que a aplicação esteja segura e otimizada, será necessário avaliar a imagem atual, identificar melhorias e aplicar boas práticas na construção do Dockerfile. Além disso, a imagem será analisada utilizando o Trivy para verificar vulnerabilidades antes e depois da correção.
 

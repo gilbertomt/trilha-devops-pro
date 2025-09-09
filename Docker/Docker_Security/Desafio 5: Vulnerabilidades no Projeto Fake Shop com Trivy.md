@@ -1,6 +1,6 @@
 # Desafio 5: Vulnerabilidades no Projeto Fake Shop com Trivy
 
-Agora que a auditoria de segurança no projeto Kube News foi realizada, a equipe da Rota42 decidiu aplicar o mesmo processo ao Fake Shop, um e-commerce fictício utilizado para demonstrações e testes de DevOps.
+Agora que a auditoria de segurança no projeto Kube News foi realizada, a equipe da Rota42 decidiu aplicar o mesmo processo ao [Fake Shop](https://github.com/KubeDev/fake-shop), um e-commerce fictício utilizado para demonstrações e testes de DevOps.
 
 Assim como no primeiro desafio, a primeira etapa da auditoria será analisar as dependências da aplicação para identificar possíveis vulnerabilidades antes de avaliar a imagem Docker. Para isso, será utilizado o Trivy, uma ferramenta amplamente adotada para análise de segurança em projetos e containers.
 

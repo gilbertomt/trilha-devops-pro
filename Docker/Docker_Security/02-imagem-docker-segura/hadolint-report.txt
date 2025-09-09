@@ -1,0 +1,1 @@
+"hdolint retornou vazio"

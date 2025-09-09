@@ -1,0 +1,16 @@
+services:
+  app:
+    image: rota42/app:v1
+    container_name: rota42_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    networks:
+      - rota42_app_network
+
+networks:
+  rota42_app_network:
+    name: rota42_app_network
+    driver: bridge
